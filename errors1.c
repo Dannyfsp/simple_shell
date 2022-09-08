@@ -1,6 +1,5 @@
 #include "shell.h"
 
-
 /**
  * _erratoi - converts a string to an integer
  * @s: the string to be converted
@@ -97,8 +96,7 @@ int print_d(int input, int fd)
 char *convert_number(long int num, int base, int flags)
 {
 	static char *array;
-	static char bffer[50];
-
+	static char buffer[50];
 	char sign = 0;
 	char *ptr;
 	unsigned long n = num;
@@ -113,8 +111,7 @@ char *convert_number(long int num, int base, int flags)
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do	
-
+	do	{
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
